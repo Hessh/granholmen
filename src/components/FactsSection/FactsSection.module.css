@@ -1,7 +1,7 @@
 .factContainer {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 4rem 0 6rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--cta-color);
 }
 
@@ -16,4 +16,23 @@
 .image {
   position: relative;
   object-fit: contain;
+  width: 100%;
+}
+
+/* Styles for tablet */
+
+@media screen and (min-width: 768px) {}
+
+/* Styles for laptop and up */
+
+@media screen and (min-width: 1024px) {
+  .factContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 4rem 0 6rem 0;
+  }
+  .image {
+    position: relative;
+    object-fit: contain;
+  }
 }

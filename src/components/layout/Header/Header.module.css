@@ -1,0 +1,170 @@
+/* All */
+
+.container {
+  width: 100%;
+  height: 4.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  box-shadow: 0px 0px 4px #00000050;
+}
+
+.siteNav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.siteNavLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.headerLogo {
+  position: relative;
+  height: 100%;
+}
+
+.headerLogo img {
+  object-fit: contain;
+}
+
+.siteNavRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.siteMenuWrapper {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.siteMenuWrapper.show {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.siteMenu {
+  height: calc(100% - 5rem);
+  margin: 0;
+  padding: 2rem 1rem;
+  position: absolute;
+  top: 5.2rem;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-dark);
+}
+
+.menuItem {
+  width: 100%;
+  margin: 2rem 0;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 19px;
+  list-style-type: none;
+}
+
+.menuItem * {
+  color: var(--cl-text-light)
+}
+
+.menuItem:first-of-type {
+  margin-top: 0;
+}
+
+.menuItem:last-of-type {
+  margin-bottom: 0;
+}
+
+.menuItem a {
+  width: 100%;
+}
+
+.menuItem:first-of-type a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropDownIcon {
+  margin: 0 0.5rem;
+}
+
+.burgerIcon {}
+
+/* Mobile */
+
+@media screen and (max-width: 786px) {}
+
+/* Larger than mobile */
+
+@media screen and (min-width: 786px) {
+  .siteNavLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .siteMenuWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .siteMenu {
+    height: unset;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: unset;
+  }
+  .siteMenu:first-of-type {
+    position: relative;
+    top: unset;
+  }
+  .menuItem {
+    width: unset;
+    margin: 0 0.5rem;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .menuItem:hover {
+    text-decoration: underline;
+  }
+  .menuItem:last-of-type {
+    margin-right: 0;
+  }
+  .subMenu {
+    padding: 0.5rem 2rem;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: -2rem;
+    list-style: none;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-dark);
+  }
+  .subMenu .menuItem {
+    margin: 1.5rem 0;
+  }
+  .dropDownIcon {
+    margin: 0 0.5rem;
+  }
+  .dropDownIcon img {
+    top: 5px;
+  }
+  .burgerIcon {
+    display: none;
+  }
+}

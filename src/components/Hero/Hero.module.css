@@ -9,7 +9,7 @@
 }
 
 .heroText {
-  padding: 2rem;
+  padding: 1rem 0.5rem;
   text-align: center;
   border-bottom: 1px solid var(--cta-color);
 }
@@ -19,7 +19,7 @@
 }
 
 .heroText h4 {
-  margin-top: 0;
+  font-size: clamp(1.2rem, 1.4rem, 1.8rem);
 }
 
 .heroText h4 p {
@@ -27,4 +27,22 @@
   color: var(--title-color);
   font-family: 'Freight', sans-serif;
   letter-spacing: 1.1px;
+}
+
+/* Styles for tablet */
+
+@media screen and (min-width: 768px) {}
+
+/* Styles for laptop and up */
+
+@media screen and (min-width: 1024px) {
+  .heroText {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--cta-color);
+  }
+  .heroText h4 {
+    margin-top: 0;
+    font-size: clamp(1.2rem, 1.8rem, 1.8rem);
+  }
 }

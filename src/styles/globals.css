@@ -81,24 +81,25 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 3.4rem;
+  font-size: clamp(2.4rem, 3.2rem, 3.4rem);
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: clamp(2.4rem, 2.8rem, 3.2rem);
 }
 
 h3 {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 2.4rem, 2.8rem);
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 1.8rem, 1.8rem);
   line-height: 38px;
 }
 
 h5 {
   font-size: 1rem;
+  font-size: clamp(1rem, 1.125rem, 1.4rem);
   line-height: 25px;
 }
 
@@ -124,6 +125,15 @@ a:hover {
 a:hover, button:hover {
   cursor: pointer;
 }
+
+/* Lists */
+
+ul, ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li, ol li {}
 
 /* Containers */
 
@@ -223,8 +233,8 @@ a:hover, button:hover {
 
 /* Styles for tablet */
 
-@media screen and (min-width: 750px) {}
+@media screen and (min-width: 768px) {}
 
 /* Styles for laptop and up */
 
-@media screen and (min-width: 1000px) {}
+@media screen and (min-width: 1024px) {}

@@ -31,7 +31,9 @@ const Home = ({ data }) => {
           <Container size='small' className={styles.content}>
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </Container>
-          <h5>Innholdsfortegnelse</h5>
+          <div className={styles.tocContainer}>
+            <h5>Innholdsfortegnelse</h5>
+          </div>
         </ContentContainer>
       </Container>
     </Layout>

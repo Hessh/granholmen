@@ -5,7 +5,6 @@ import Container from 'components/Container/Container'
 import styles from './FactsSection.module.css'
 
 const FactsSection = ({ data }) => {
-  console.log(data)
   const {
     title,
     text,

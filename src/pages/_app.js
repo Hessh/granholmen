@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Create Next App</title>
-        <link rel='icon' href='/media/icons/favicon.ico' />
+        <link rel='icon' href='/media/logos/boat.png' />
       </Head>
       <Component {...pageProps} />
     </>

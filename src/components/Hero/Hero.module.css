@@ -1,0 +1,30 @@
+.heroImage {
+  height: 460px;
+  position: relative;
+}
+
+.heroImage img {
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+
+.heroText {
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--cta-color);
+}
+
+.heroText h1 {
+  margin-bottom: 0.5rem;
+}
+
+.heroText h4 {
+  margin-top: 0;
+}
+
+.heroText h4 p {
+  all: unset;
+  color: var(--title-color);
+  font-family: 'Freight', sans-serif;
+  letter-spacing: 1.1px;
+}

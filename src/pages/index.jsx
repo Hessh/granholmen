@@ -2,8 +2,8 @@ import graphql from 'lib/api'
 import { GET_HOMEPAGE } from 'lib/queries/page'
 
 import Layout from 'components/layout/Layout/Layout'
-import Container from 'components/Container/Container'
 import Hero from 'components/Hero/Hero'
+import Container from 'components/Container/Container'
 import FactsSection from 'components/FactsSection/FactsSection'
 import ContentContainer from 'components/ContentContainer/ContentContainer'
 

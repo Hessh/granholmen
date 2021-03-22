@@ -56,6 +56,8 @@ a {
   --text-color-accent: #fff;
   --link-color: #D59F75;
   --link-color-accent: #b17242;
+  --border-radius: 2px;
+  --shadow: 0px 0px 5px 0px #C5CDD9;
 }
 
 html, body {

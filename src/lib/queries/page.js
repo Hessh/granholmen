@@ -30,29 +30,24 @@ export const GET_BOARD_MEMBERS = `
     page(id: "styret", idType: URI) {
       slug
       title
-      content
       excerpt
       featuredImage {
         node {
           sourceUrl
         }
       }
-      styrePage {
-        medlemmer {
-          medlem {
-            ... on Styremedlem {
-              styremedlem {
-                name
-                position
-                phone
-                mail
-                gender
-              }
-            }
-          }
+      ${SEO_FRAGMENT}
+    }
+    styremedlemmer(first: 100) {
+      nodes {
+        styremedlem {
+          name
+          position
+          phone
+          mail
+          gender
         }
       }
-      ${SEO_FRAGMENT}
     }
     ${MENU_FRAGMENT}
   }`
@@ -62,62 +57,51 @@ export const GET_REPORTS = `
     page(id: "referat", idType: URI) {
       slug
       title
-      content
       excerpt
       featuredImage {
         node {
           sourceUrl
         }
       }
-      referatPage {
-        referater {
-          referat {
-            ... on Referat {
-              referat {
-                name
-                date
-                file {
-                  sourceUrl
-                }
-              }
-            }
+      ${SEO_FRAGMENT}
+    }
+    referater(first: 100) {
+      nodes {
+        referat {
+          name
+          date
+          file {
+            sourceUrl
           }
         }
       }
-      ${SEO_FRAGMENT}
     }
     ${MENU_FRAGMENT}
   }`
 
 export const GET_ANNUAL_REPORTS = `
   query getReports{
-    page(id: "årsberetning", idType: URI) {
+    page(id: "arsberetning", idType: URI) {
       slug
       title
-      content
       excerpt
       featuredImage {
         node {
           sourceUrl
         }
       }
-      arsberetningPage {
-        arsberetninger {
-          arsberetning {
-            ... on Arsberetning {
-              id
-              arsberetning {
-                name
-                date
-                file {
-                  sourceUrl
-                }
-              }
-            }
+      ${SEO_FRAGMENT}
+    }
+    arsberetninger(first: 100) {
+      nodes {
+        arsberetning {
+          name
+          date
+          file {
+            sourceUrl
           }
         }
       }
-      ${SEO_FRAGMENT}
     }
     ${MENU_FRAGMENT}
   }`

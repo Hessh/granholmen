@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.membersContainer {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+}
+
+.member {
+  margin: 1rem;
+  padding: 1.5rem;
+  max-width: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.member h5 {
+  margin-bottom: 0;
+}
+
+.member p {
+  margin: 0;
+}
+
+.member p:first-of-type {
+  margin-bottom: 0.5rem;
+}

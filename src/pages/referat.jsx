@@ -25,8 +25,8 @@ const Referat = ({ data }) => {
         {nodes.map(node => {
           const { referat } = node
           return (
-            <a key={referat.name} href={referat.file.sourceUrl} target='_blank' className={styles.report}>
-              <h5>{referat.name}</h5>
+            <a key={referat.name} href={referat.file} target='_blank' className={styles.report}>
+              <h5>{node.title}</h5>
               <h5>{referat.date}</h5>
               <button>Åpne</button>
             </a>

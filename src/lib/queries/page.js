@@ -67,12 +67,10 @@ export const GET_REPORTS = `
     }
     referater(first: 100) {
       nodes {
+        title
         referat {
-          name
           date
-          file {
-            sourceUrl
-          }
+          file
         }
       }
     }
@@ -94,12 +92,10 @@ export const GET_ANNUAL_REPORTS = `
     }
     arsberetninger(first: 100) {
       nodes {
+        title
         arsberetning {
-          name
           date
-          file {
-            sourceUrl
-          }
+          file
         }
       }
     }

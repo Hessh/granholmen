@@ -25,13 +25,8 @@ const Arsberetning = ({ data }) => {
         {nodes.map(node => {
           const { arsberetning } = node
           return (
-            <a
-              key={arsberetning.name}
-              href={arsberetning.file.sourceUrl}
-              target='_blank'
-              className={styles.annualReport}
-            >
-              <h5>{arsberetning.name}</h5>
+            <a key={arsberetning.name} href={arsberetning.file} target='_blank' className={styles.annualReport}>
+              <h5>{node.title}</h5>
               <h5>{arsberetning.date}</h5>
               <button>Åpne</button>
             </a>

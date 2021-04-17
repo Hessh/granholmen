@@ -4,7 +4,7 @@ import IconContainer from 'components/IconContainer/IconContainer'
 const DomainLogo = ({ className, src, width, height }) => {
   return (
     <div className={className}>
-      <Link href={'/'}>
+      <Link href={'/home'}>
         <a>
           <IconContainer src={src} width={width} height={height} />
         </a>

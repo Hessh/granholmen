@@ -1,5 +1,5 @@
 .heroImage {
-  height: 460px;
+  height: 350px;
   position: relative;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .heroText {
-  padding: 1rem 0.5rem;
+  padding: 0 0.5rem;
   text-align: center;
   border-bottom: 1px solid var(--cta-color);
 }
@@ -19,6 +19,7 @@
 }
 
 .heroText h4 {
+  margin-top: 0;
   font-size: clamp(1.2rem, 1.4rem, 1.8rem);
 }
 
@@ -31,7 +32,16 @@
 
 /* Styles for tablet */
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  .heroImage {
+    height: 460px;
+  }
+  .heroText {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--cta-color);
+  }
+}
 
 /* Styles for laptop and up */
 
@@ -42,7 +52,6 @@
     border-bottom: 1px solid var(--cta-color);
   }
   .heroText h4 {
-    margin-top: 0;
     font-size: clamp(1.2rem, 1.8rem, 1.8rem);
   }
 }

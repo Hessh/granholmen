@@ -9,14 +9,9 @@ import styles from './Header.module.css'
 
 const Header = ({ headerMenu }) => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(false)
-  const [showSubMenu, setShowSubMenu] = useState(false)
 
   const burgerToggle = () => {
     setShowBurgerMenu(!showBurgerMenu)
-  }
-
-  const subMenuToggle = () => {
-    setShowSubMenu(!showSubMenu)
   }
 
   const menuItems = headerMenu.menuItems.nodes
@@ -38,7 +33,7 @@ const Header = ({ headerMenu }) => {
           </div>
           <IconContainer
             className={styles.burgerIcon}
-            src={showBurgerMenu ? 'cross.icon.svg' : 'burger.icon.svg'}
+            src={showBurgerMenu ? 'icons/cross.icon.svg' : 'icons/burger.icon.svg'}
             width={30}
             height={30}
             onClick={burgerToggle}

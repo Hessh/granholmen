@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Granholmen</title>
         <link rel='icon' href='/media/logos/boat.png' />
       </Head>
       <Component {...pageProps} />

@@ -100,15 +100,12 @@
   margin: 0 0.5rem;
 }
 
-.burgerIcon {}
-
-/* Mobile */
-
-@media screen and (max-width: 786px) {}
-
 /* Larger than mobile */
 
 @media screen and (min-width: 786px) {
+  .siteNav {
+    margin: 0 auto;
+  }
   .siteNavLeft {
     display: flex;
     flex-direction: row;

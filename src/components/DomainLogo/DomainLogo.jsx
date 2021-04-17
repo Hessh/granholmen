@@ -1,4 +1,4 @@
-import Link from 'next/Link'
+import Link from 'next/link'
 import IconContainer from 'components/IconContainer/IconContainer'
 
 const DomainLogo = ({ className, src, width, height }) => {

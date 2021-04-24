@@ -2,15 +2,9 @@
   border-top: 1px solid var(--cta-color);
 }
 
-.containerContent {}
-
-.footerContent {}
-
 .footerContent h5 {
   margin-bottom: 0.5rem;
 }
-
-.subMenu {}
 
 .subMenu .menuItem {
   margin: 0.75rem 0;
@@ -52,6 +46,10 @@
 
 .bottomLeft .menuItem a {
   color: var(--text-color);
+}
+
+.bottomLeft .menuItem a:hover {
+  color: var(--link-color-accent);
 }
 
 /* Styles for tablet */

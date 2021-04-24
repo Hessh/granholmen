@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 3.2rem, 3.4rem);
+  font-size: 2.8rem;
 }
 
 h2 {
@@ -79,7 +79,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(2rem, 2.4rem, 2.8rem);
+  font-size: 2rem;
 }
 
 h4 {
@@ -98,7 +98,7 @@ p {
   font-family: 'Proxima Nova', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 25px;
+  line-height: 180%;
 }
 
 /* Links */
@@ -219,7 +219,14 @@ ul, ol {
 
 /* Styles for tablet */
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+}
 
 /* Styles for laptop and up */
 

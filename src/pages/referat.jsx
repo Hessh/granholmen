@@ -22,16 +22,19 @@ const Referat = ({ data }) => {
     <Layout menus={{ headerMenu, footerMenu }} seo={seo}>
       <Hero title={title} subTitle={excerpt} image={sourceUrl} />
       <Container size='medium' className={styles.reportContainer}>
-        {nodes.map(node => {
-          const { referat } = node
-          return (
-            <a key={referat.name} href={referat.file} target='_blank' className={styles.report}>
-              <h5>{node.title}</h5>
-              <h5>{referat.date}</h5>
-              <button>Åpne</button>
-            </a>
-          )
-        })}
+        {nodes
+          .sort((a, b) => (a.title < b.title ? 1 : -1))
+          .map(node => {
+            const { referat } = node
+            return (
+              <a key={referat.name} href={referat.file} target='_blank' className={styles.report}>
+                <img src='media/icons/file.icon.svg' alt='PDF-file' />
+                <h5>{node.title}</h5>
+                <h5>{referat.date}</h5>
+                <button>Åpne</button>
+              </a>
+            )
+          })}
       </Container>
     </Layout>
   )

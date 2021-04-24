@@ -101,3 +101,54 @@ export const GET_ANNUAL_REPORTS = `
     }
     ${MENU_FRAGMENT}
   }`
+
+export const GET_PROVISIONS = `
+  query getHomepage{
+    page(id: "vedtekter", idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    ${MENU_FRAGMENT}
+  }`
+
+export const GET_SEWAGE = `
+  query getHomepage{
+    page(id: "vann-og-avlop", idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    ${MENU_FRAGMENT}
+  }`
+
+export const GET_MEMBERSHIP_FEE = `
+  query getHomepage{
+    page(id: "medlemskontigent", idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    ${MENU_FRAGMENT}
+  }`

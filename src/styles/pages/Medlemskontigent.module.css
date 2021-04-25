@@ -1,10 +1,14 @@
 .feeContent {
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 /* Styles for tablet */
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  .feeContent {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+}
 
 /* Styles for laptop and up */
 

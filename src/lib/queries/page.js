@@ -103,7 +103,7 @@ export const GET_ANNUAL_REPORTS = `
   }`
 
 export const GET_PROVISIONS = `
-  query getHomepage{
+  query getProvisions{
     page(id: "vedtekter", idType: URI) {
       slug
       title
@@ -120,7 +120,7 @@ export const GET_PROVISIONS = `
   }`
 
 export const GET_SEWAGE = `
-  query getHomepage{
+  query getSewage{
     page(id: "vann-og-avlop", idType: URI) {
       slug
       title
@@ -137,8 +137,25 @@ export const GET_SEWAGE = `
   }`
 
 export const GET_MEMBERSHIP_FEE = `
-  query getHomepage{
+  query getMembershipFee{
     page(id: "medlemskontigent", idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    ${MENU_FRAGMENT}
+  }`
+
+export const GET_MISC = `
+  query getMisc($id: ID!){
+    page(id: $id, idType: URI) {
       slug
       title
       content

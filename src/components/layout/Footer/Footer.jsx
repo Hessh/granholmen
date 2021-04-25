@@ -14,6 +14,8 @@ const Footer = ({ footerMenu }) => {
   const year = new Date().getFullYear()
   const COPYRIGHT = '© ' + year + ' Hess Design'
 
+  const FOTOCREDIT = 'Foto: Svein Hansen'
+
   return (
     <>
       <Container size='fullWidth' className={styles.footerContainer}>
@@ -75,6 +77,7 @@ const Footer = ({ footerMenu }) => {
             <FooterItem className={styles.menuItem} slug='/informasjonskapsler' text='Informasjonskapsler' />
           </ul>
           <div className={styles.bottomRight}>
+            <h5>{FOTOCREDIT}</h5>
             <h5>{COPYRIGHT}</h5>
           </div>
         </Container>

@@ -1,8 +1,8 @@
-.reportContainer {
+.annualReportContainer {
   padding: 2rem 0;
 }
 
-.report {
+.annualReport {
   margin: 1rem 1rem;
   padding: 0 1rem;
   display: flex;
@@ -14,16 +14,16 @@
   transition: all linear 0.2s;
 }
 
-.report:hover {
+.annualReport:hover {
   border: 1px solid var(--link-color-accent);
   transform: scale(1.02);
 }
 
-.report img {
+.annualReport img {
   width: 25px;
 }
 
-.report h5 {
+.annualReport h5 {
   margin: 1rem;
 }
 
@@ -31,11 +31,11 @@
   font-size: 1.2rem;
 }
 
-.report h5:last-of-type {
+.annualReport h5:last-of-type {
   display: none;
 }
 
-.report button {
+.annualReport button {
   padding: 0.5rem 1rem;
   font-weight: bold;
   color: #FFF;
@@ -45,7 +45,7 @@
   transition: all linear 0.2s;
 }
 
-.report:hover button {
+.annualReport:hover button {
   background-color: var(--link-color-accent);
 }
 
@@ -55,7 +55,7 @@
   .reportContainer {
     padding: 2rem 0 1rem 0;
   }
-  .report h5:last-of-type {
+  .annualReport h5:last-of-type {
     display: block;
   }
 }

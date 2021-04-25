@@ -16,12 +16,15 @@
 .member {
   margin: 1rem;
   padding: 1.5rem;
-  max-width: 300px;
-  min-width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: var(--border-radius);
   box-shadow: var(--shadow);
+}
+
+.member img {
+  width: 100%;
 }
 
 .member h5 {
@@ -34,4 +37,22 @@
 
 .member p:first-of-type {
   margin-bottom: 0.5rem;
+}
+
+/* Styles for tablet */
+
+@media screen and (min-width: 768px) {
+  .member {
+    max-width: 300px;
+    min-width: 100px;
+  }
+}
+
+/* Styles for laptop and up */
+
+@media screen and (min-width: 1024px) {
+  .member {
+    max-width: 300px;
+    min-width: 300px;
+  }
 }

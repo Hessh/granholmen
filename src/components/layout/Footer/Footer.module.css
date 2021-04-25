@@ -91,4 +91,7 @@
     flex-direction: row;
     justify-content: flex-end;
   }
+  .bottomRight h5:first-of-type {
+    margin-right: 2rem;
+  }
 }

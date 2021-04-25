@@ -11,7 +11,6 @@
   align-self: baseline;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  border-left: 1px solid rgb(54 72 99 / 12%);
 }
 
 .title {

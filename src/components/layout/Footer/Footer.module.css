@@ -6,12 +6,30 @@
   margin-bottom: 0.5rem;
 }
 
+.subMenu {
+  padding: 0;
+  background-color: unset;
+  border-left: none;
+  list-style-type: none;
+}
+
 .subMenu .menuItem {
   margin: 0.75rem 0;
 }
 
 .subMenu .menuItem:first-of-type {
   margin-top: 0.5rem;
+}
+
+.subMenu .menuItem span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.subMenu .menuItem img {
+  width: 17px;
+  margin-right: 0.5rem;
 }
 
 .rougeSpan {
@@ -27,6 +45,13 @@
   padding: 0 !important;
   display: flex;
   flex-direction: column;
+}
+
+.bottomContent ul {
+  padding: 0;
+  background-color: unset;
+  border-left: none;
+  list-style-type: none;
 }
 
 .bottomContent h5 {
@@ -69,7 +94,7 @@
     border-top: 1px solid var(--cta-color);
   }
   .bottomContainer {
-    margin: 1rem 0 0 0;
+    margin: 0;
   }
   .bottomContent {
     flex-direction: row;

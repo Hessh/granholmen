@@ -30,8 +30,16 @@ const Styret = ({ data }) => {
                 <img src={`/media/img/avatar-${styremedlem.gender}.svg`} />
                 <h5>{styremedlem.name}</h5>
                 <p>{styremedlem.position}</p>
-                {styremedlem.phone && <p>+47 {styremedlem.phone}</p>}
-                {styremedlem.mail && <p>{styremedlem.mail}</p>}
+                {styremedlem.phone && (
+                  <p>
+                    <img src='media/icons/phone.icon.svg' alt='Tel:' /> +47 {styremedlem.phone}
+                  </p>
+                )}
+                {styremedlem.mail && (
+                  <p>
+                    <img src='media/icons/mail.icon.svg' alt='Mail:' /> {styremedlem.mail}
+                  </p>
+                )}
               </div>
             )
           })}

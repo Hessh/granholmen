@@ -1,0 +1,63 @@
+.root {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 19px 22px;
+  height: fit-content;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 6.5rem;
+  display: none;
+  flex-direction: column;
+  align-self: baseline;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.title {
+  margin: 0.5rem 0 0 0;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  padding: unset;
+  background-color: #FFF;
+  border-left: none;
+}
+
+.item {
+  font-size: 16px;
+  line-height: 19px;
+  position: relative;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  bottom: 0;
+  width: 3px;
+  height: 0;
+}
+
+.is-active::before {
+  height: 100%;
+}
+
+.link {
+  color: var(--text-color);
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .root {
+    display: flex;
+  }
+}
+
+/* Styles for laptop and up */
+
+@media screen and (min-width: 1024px) {}

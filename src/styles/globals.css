@@ -45,7 +45,8 @@
   /* --link-color-accent: #0C4B66; */
   --link-color-accent: #b17242;
   --border-radius: 2px;
-  --shadow: 0px 0px 5px 0px #C5CDD9;
+  --shadow: 0 0 2px 0 rgb(54 72 99 / 20%);
+  ;
 }
 
 html, body {
@@ -119,102 +120,36 @@ a:hover, button:hover {
 /* Lists */
 
 ul, ol {
-  padding: 0;
-  list-style-type: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #f4f4f4;
+  border-left: 3px solid var(--cta-color);
 }
 
-/* Containers */
-
-.container-fluid {
-  width: 100%;
-}
-
-.container-wide {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.container-small {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.title-container {
-  padding: 2rem 0;
-  text-align: center;
-  border-bottom: 1px solid var(--cta-color);
-}
-
-.title-container h1 {
-  margin-bottom: 0.5rem;
-}
-
-.title-container h4 {
-  margin-top: 0;
-}
-
-.text-container {
-  padding: 8rem 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-bottom: 1px solid var(--cta-color);
-}
-
-/* Content containers */
-
-.text-content {
-  padding: 0 2rem 0 0;
-}
-
-.text-content h3 {
-  margin: 0 0 0.5rem 0;
+ul li, ol li {
+  margin: 0.75rem 0;
+  color: var(--text-color);
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 25px;
 }
 
 /* Images */
 
-.img-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+figure {
+  margin: 1rem 0;
+  padding: 0;
 }
 
-.img-content img {
+figure img {
   width: 100%;
+  height: unset;
 }
 
-/* Articles */
-
-.article {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  padding-top: 2rem;
-}
-
-.article .text-left {
-  padding-right: 3rem;
-}
-
-.article .text-left h5 {
-  margin: 0.25rem 0;
-}
-
-.article .text-left h5:first-of-type {
-  margin-top: 1rem;
-}
-
-.article .text-left .sub-heading {
-  margin: 1.5rem 0 0.5rem 0;
-}
-
-.article .text-left p {
-  margin: 0 0 1.2rem 0;
-  line-height: 170%;
-}
-
-/* Sidebars */
-
-.sidebar {
-  padding-top: 2rem;
+figure figcaption {
+  font-style: italic;
+  text-align: center;
 }
 
 /* Styles for tablet */

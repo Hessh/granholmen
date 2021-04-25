@@ -6,6 +6,9 @@ import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 import FactsSection from 'components/FactsSection/FactsSection'
 import ContentContainer from 'components/ContentContainer/ContentContainer'
+import { ContentsMenuStateProvider } from 'src/context/ContentsMenuContext'
+import Wysiwyg from 'components/Wysiwyg/Wysiwyg'
+import ContentsMenu from 'components/ContentsMenu/ContentsMenu'
 
 import styles from 'styles/pages/Home.module.css'
 
@@ -27,14 +30,14 @@ const Home = ({ data }) => {
         <Container size='large'>
           <FactsSection data={homepageFacts} />
         </Container>
-        <ContentContainer size='medium' className={styles.contentContainer}>
-          <Container size='small' className={styles.content}>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-          </Container>
-          <div className={styles.tocContainer}>
-            <h5>Innholdsfortegnelse</h5>
-          </div>
-        </ContentContainer>
+        <ContentsMenuStateProvider>
+          <ContentContainer size='medium' className={styles.contentContainer}>
+            <Wysiwyg isContentsMenu={true} className={styles.content}>
+              {content}
+            </Wysiwyg>
+            <ContentsMenu className={styles.sidebarRight} />
+          </ContentContainer>
+        </ContentsMenuStateProvider>
       </Container>
     </Layout>
   )

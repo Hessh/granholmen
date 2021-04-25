@@ -27,10 +27,14 @@ const Footer = ({ footerMenu }) => {
                 <span>Styreleder: {subItemsContact[0].label}</span>
               </li>
               <li className={styles.menuItem}>
-                <span>Tel: {subItemsContact[1].label}</span>
+                <span>
+                  <img src='media/icons/phone.icon.svg' alt='Tel:' /> {subItemsContact[1].label}
+                </span>
               </li>
               <li className={styles.menuItem}>
-                <span>Epost: {subItemsContact[2].label}</span>
+                <span>
+                  <img src='media/icons/mail.icon.svg' alt='Mail:' /> {subItemsContact[2].label}
+                </span>
               </li>
             </ul>
           </div>

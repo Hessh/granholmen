@@ -63,6 +63,7 @@
   left: 0;
   right: 0;
   background-color: #FFF;
+  border-left: none;
 }
 
 .menuItem {

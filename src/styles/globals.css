@@ -45,7 +45,8 @@
   /* --link-color-accent: #0C4B66; */
   --link-color-accent: #b17242;
   --border-radius: 2px;
-  --shadow: 0px 0px 5px 0px #C5CDD9;
+  --shadow: 0 0 2px 0 rgb(54 72 99 / 20%);
+  ;
 }
 
 html, body {

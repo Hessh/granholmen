@@ -5,6 +5,9 @@ import Layout from 'components/layout/Layout/Layout'
 import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 import ContentContainer from 'components/ContentContainer/ContentContainer'
+import { ContentsMenuStateProvider } from 'src/context/ContentsMenuContext'
+import Wysiwyg from 'components/Wysiwyg/Wysiwyg'
+import ContentsMenu from 'components/ContentsMenu/ContentsMenu'
 
 import styles from 'styles/pages/Vedtekter.module.css'
 
@@ -23,14 +26,14 @@ const Vedtekter = ({ data }) => {
     <Layout menus={{ headerMenu, footerMenu }} seo={seo}>
       <Hero title={title} subTitle={excerpt} image={sourceUrl} />
       <Container size='fullWidth'>
-        <ContentContainer size='medium' className={styles.contentContainer}>
-          <Container size='small' className={styles.content}>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-          </Container>
-          <div className={styles.tocContainer}>
-            <h5>Innholdsfortegnelse</h5>
-          </div>
-        </ContentContainer>
+        <ContentsMenuStateProvider>
+          <ContentContainer size='medium' className={styles.contentContainer}>
+            <Wysiwyg isContentsMenu={true} className={styles.content}>
+              {content}
+            </Wysiwyg>
+            <ContentsMenu className={styles.sidebarRight} />
+          </ContentContainer>
+        </ContentsMenuStateProvider>
       </Container>
     </Layout>
   )

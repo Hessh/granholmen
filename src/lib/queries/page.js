@@ -52,56 +52,6 @@ export const GET_BOARD_MEMBERS = `
     ${MENU_FRAGMENT}
   }`
 
-export const GET_REPORTS = `
-  query getReports{
-    page(id: "referat", idType: URI) {
-      slug
-      title
-      excerpt
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      ${SEO_FRAGMENT}
-    }
-    referater(first: 100) {
-      nodes {
-        title
-        referat {
-          date
-          file
-        }
-      }
-    }
-    ${MENU_FRAGMENT}
-  }`
-
-export const GET_ANNUAL_REPORTS = `
-  query getReports{
-    page(id: "arsberetning", idType: URI) {
-      slug
-      title
-      excerpt
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      ${SEO_FRAGMENT}
-    }
-    arsberetninger(first: 100) {
-      nodes {
-        title
-        arsberetning {
-          date
-          file
-        }
-      }
-    }
-    ${MENU_FRAGMENT}
-  }`
-
 export const GET_ANNUAL_MEETINGS = `
   query getReports{
     page(id: "arsmoter", idType: URI) {

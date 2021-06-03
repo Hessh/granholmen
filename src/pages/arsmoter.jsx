@@ -5,7 +5,7 @@ import Layout from 'components/layout/Layout/Layout'
 import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 
-import styles from 'styles/pages/Arsberetning.module.css'
+import styles from 'styles/pages/Arsmoter.module.css'
 
 const Arsmoter = ({ data }) => {
   const {

@@ -102,6 +102,37 @@ export const GET_ANNUAL_REPORTS = `
     ${MENU_FRAGMENT}
   }`
 
+export const GET_ANNUAL_MEETINGS = `
+  query getReports{
+    page(id: "arsmoter", idType: URI) {
+      slug
+      title
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    arsmoter(first: 100) {
+      nodes {
+        title
+        arsmoteFields {
+          datenotice
+          filenotice
+          dateannualreport
+          fileannualreport
+          datereport
+          filereport
+          dateaccounting
+          fileaccounting
+        }
+      }
+    }
+    ${MENU_FRAGMENT}
+  }`
+
 export const GET_PROVISIONS = `
   query getProvisions{
     page(id: "vedtekter", idType: URI) {

@@ -136,6 +136,23 @@ export const GET_SEWAGE = `
     ${MENU_FRAGMENT}
   }`
 
+export const GET_SONGPAGE = `
+  query getMisc($id: ID!){
+    page(id: $id, idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    ${MENU_FRAGMENT}
+  }`
+
 export const GET_MEMBERSHIP_FEE = `
   query getMembershipFee{
     page(id: "medlemskontigent", idType: URI) {

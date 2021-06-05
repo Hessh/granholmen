@@ -9,7 +9,7 @@ import { ContentsMenuStateProvider } from 'src/context/ContentsMenuContext'
 import Wysiwyg from 'components/Wysiwyg/Wysiwyg'
 import ContentsMenu from 'components/ContentsMenu/ContentsMenu'
 
-import styles from 'styles/pages/Vedtekter.module.css'
+import styles from 'styles/pages/Sangen.module.css'
 // import styles from 'styles/pages/GranholmenSangen.module.css'
 
 const Vedtekter = ({ data }) => {
@@ -19,22 +19,19 @@ const Vedtekter = ({ data }) => {
     footerMenu,
   } = data
 
-  // const {
-  //   node: { sourceUrl },
-  // } = featuredImage
+  const {
+    node: { sourceUrl },
+  } = featuredImage
 
   return (
     <Layout menus={{ headerMenu, footerMenu }} seo={seo}>
-      {/* <Hero title={title} subTitle={excerpt} image={sourceUrl} /> */}
+      <Hero title={title} subTitle={excerpt} image={sourceUrl} />
       <Container size='fullWidth'>
-        <ContentsMenuStateProvider>
-          <ContentContainer size='medium' className={styles.contentContainer}>
-            <Wysiwyg isContentsMenu={true} className={styles.content}>
-              {content}
-            </Wysiwyg>
-            <ContentsMenu className={styles.sidebarRight} />
-          </ContentContainer>
-        </ContentsMenuStateProvider>
+        <ContentContainer size='medium' className={styles.contentContainer}>
+          <Wysiwyg isContentsMenu={false} className={styles.content}>
+            {content}
+          </Wysiwyg>
+        </ContentContainer>
       </Container>
     </Layout>
   )

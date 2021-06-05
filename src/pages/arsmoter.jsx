@@ -53,14 +53,14 @@ const Arsmoter = ({ data }) => {
           )}
         </div>
         <div className={styles.annualMeetings}>
-          {arsmoter.map(({ arsmote, title }) => {
+          {arsmoter.map(({ title, ghfArsmote: arsmote }) => {
             if (title == selectedYear) {
               return (
                 <>
                   <h4>{title}</h4>
                   {arsmote.accountingfile != null && (
                     <a className={styles.annualMeeting} href={arsmote.accountingfile.sourceUrl} target='_blank'>
-                      <img src='media/icons/file.icon.svg' alt='PDF-file' />
+                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Regnskap</h5>
                       <h5>{arsmote.accountingdate}</h5>
                       <button>Åpne</button>
@@ -68,7 +68,7 @@ const Arsmoter = ({ data }) => {
                   )}
                   {arsmote.annualreportfile != null && (
                     <a className={styles.annualMeeting} href={arsmote.annualreportfile.sourceUrl} target='_blank'>
-                      <img src='media/icons/file.icon.svg' alt='PDF-file' />
+                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Årsberetning</h5>
                       <h5>{arsmote.annualreportdate}</h5>
                       <button>Åpne</button>
@@ -76,7 +76,7 @@ const Arsmoter = ({ data }) => {
                   )}
                   {arsmote.incomingcasesfile != null && (
                     <a className={styles.annualMeeting} href={arsmote.incomingcasesfile.sourceUrl} target='_blank'>
-                      <img src='media/icons/file.icon.svg' alt='PDF-file' />
+                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Innkommende saker</h5>
                       <h5>{arsmote.incomingcasesdate}</h5>
                       <button>Åpne</button>
@@ -84,7 +84,7 @@ const Arsmoter = ({ data }) => {
                   )}
                   {arsmote.noticefile != null && (
                     <a className={styles.annualMeeting} href={arsmote.noticefile.sourceUrl} target='_blank'>
-                      <img src='media/icons/file.icon.svg' alt='PDF-file' />
+                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Innkalling</h5>
                       <h5>{arsmote.noticedate}</h5>
                       <button>Åpne</button>
@@ -92,7 +92,7 @@ const Arsmoter = ({ data }) => {
                   )}
                   {arsmote.reportfile != null && (
                     <a className={styles.annualMeeting} href={arsmote.reportfile.sourceUrl} target='_blank'>
-                      <img src='media/icons/file.icon.svg' alt='PDF-file' />
+                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Referat</h5>
                       <h5>{arsmote.reportdate}</h5>
                       <button>Åpne</button>

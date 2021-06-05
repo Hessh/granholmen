@@ -69,23 +69,6 @@ export const GET_PROVISIONS = `
     ${MENU_FRAGMENT}
   }`
 
-export const GET_SEWAGE = `
-  query getSewage{
-    page(id: "vann-og-avlop", idType: URI) {
-      slug
-      title
-      content
-      excerpt
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      ${SEO_FRAGMENT}
-    }
-    ${MENU_FRAGMENT}
-  }`
-
 export const GET_SONGPAGE = `
   query getMisc($id: ID!){
     page(id: $id, idType: URI) {

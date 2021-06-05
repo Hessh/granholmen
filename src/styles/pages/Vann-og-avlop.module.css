@@ -1,50 +1,68 @@
-.content {
-  margin: 0;
-  padding-right: 0;
+.annualMeetingsContainer {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  column-gap: 2rem;
 }
 
-.content h3 {
-  margin: 0 0 1rem 0;
+.annualMeeting {
+  margin: 1rem 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.2rem;
+  border: 1px solid var(--link-color);
+  transition: all linear 0.2s;
 }
 
-.content h4 {
-  margin: 1.5rem 0 0.5rem 0;
+.annualMeeting:hover {
+  border: 1px solid var(--link-color-accent);
+  transform: scale(1.02);
 }
 
-.content h5 {
-  margin: 0.5rem 0;
+.annualMeeting img {
+  width: 25px;
 }
 
-.content h5:first-of-type {
-  margin-top: 2rem;
+.annualMeeting h5 {
+  margin: 1rem;
 }
 
-.content p {
-  margin: 0 0 1.2rem 0;
-  line-height: 170%;
+.annualMeeting h5:first-of-type {
+  font-size: 1.2rem;
 }
 
-.tocContainer {
+.annualMeeting h5:last-of-type {
   display: none;
+}
+
+.annualMeeting button {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #FFF;
+  background-color: var(--cta-color);
+  border-radius: 0.2rem;
+  border: none;
+  transition: all linear 0.2s;
+}
+
+.annualMeeting:hover button {
+  background-color: var(--link-color-accent);
 }
 
 /* Styles for tablet */
 
 @media screen and (min-width: 768px) {
-  .content {
-    margin: 0;
-    padding-right: 3rem;
+  .annualMeetingContainer {
+    padding: 2rem 0 1rem 0;
+  }
+  .annualMeeting h5:last-of-type {
+    display: block;
   }
 }
 
 /* Styles for laptop and up */
 
-@media screen and (min-width: 1024px) {
-  .contentContainer {
-    display: flex;
-    flex-direction: row;
-  }
-  .tocContainer {
-    display: flex;
-  }
-}
+@media screen and (min-width: 1024px) {}

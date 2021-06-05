@@ -1,11 +1,12 @@
 import MENU_FRAGMENT from '../fragments/menus'
 import SEO_FRAGMENT from '../fragments/seo'
 
-export const GET_ANNUAL_MEETINGS = `
-  query getReports{
-    page(id: "arsmoter", idType: URI) {
+export const GET_SEWAGE = `
+  query getSewage{
+    page(id: "vann-og-avlopslaget", idType: URI) {
       slug
       title
+      content
       excerpt
       featuredImage {
         node {
@@ -14,10 +15,10 @@ export const GET_ANNUAL_MEETINGS = `
       }
       ${SEO_FRAGMENT}
     }
-    arsmoter(first: 100) {
+    gvaArsmoter(first: 100) {
       nodes {
         title
-        ghfArsmote {
+        gvaArsmote {
           accountingdate
           accountingfile {
             sourceUrl
@@ -40,6 +41,40 @@ export const GET_ANNUAL_MEETINGS = `
           }
         }
       }
+    }
+    ${MENU_FRAGMENT}
+  }`
+
+export const GET_PROVISIONS = `
+  query getProvisions{
+    page(id: "gva-vedtekter", idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    ${MENU_FRAGMENT}
+  }`
+
+export const GET_INSTRUCTIONS = `
+  query getProvisions{
+    page(id: "brukerinstruks", idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
     }
     ${MENU_FRAGMENT}
   }`

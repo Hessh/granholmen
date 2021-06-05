@@ -30,7 +30,7 @@
   margin: 1rem;
 }
 
-.report h5:first-of-type {
+.annualMeeting h5:first-of-type {
   font-size: 1.2rem;
 }
 
@@ -55,7 +55,7 @@
 /* Styles for tablet */
 
 @media screen and (min-width: 768px) {
-  .reportContainer {
+  .annualMeetingContainer {
     padding: 2rem 0 1rem 0;
   }
   .annualMeeting h5:last-of-type {

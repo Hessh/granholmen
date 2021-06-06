@@ -118,12 +118,6 @@ const Sewage = ({ data }) => {
               }
             })}
           </div>
-          {/* <Container size='small' className={styles.content}>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-          </Container>
-          <div className={styles.tocContainer}>
-            <h5>Innholdsfortegnelse</h5>
-          </div> */}
         </ContentContainer>
       </Container>
     </Layout>

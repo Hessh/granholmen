@@ -5,12 +5,9 @@ import Layout from 'components/layout/Layout/Layout'
 import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 import ContentContainer from 'components/ContentContainer/ContentContainer'
-import { ContentsMenuStateProvider } from 'src/context/ContentsMenuContext'
 import Wysiwyg from 'components/Wysiwyg/Wysiwyg'
-import ContentsMenu from 'components/ContentsMenu/ContentsMenu'
 
 import styles from 'styles/pages/Sangen.module.css'
-// import styles from 'styles/pages/GranholmenSangen.module.css'
 
 const Vedtekter = ({ data }) => {
   const {

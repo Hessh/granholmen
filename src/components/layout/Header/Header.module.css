@@ -129,6 +129,9 @@
 /* Larger than mobile */
 
 @media screen and (min-width: 786px) {
+  .siteNav {
+    margin: 0 1rem;
+  }
   .siteNavLeft {
     display: flex;
     flex-direction: row;
@@ -191,5 +194,11 @@
   }
   .burgerIcon {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .siteNav {
+    margin: 0 auto;
   }
 }

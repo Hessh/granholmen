@@ -69,6 +69,40 @@ export const GET_PROVISIONS = `
     ${MENU_FRAGMENT}
   }`
 
+export const GET_NEWS = `
+  query getMisc($id: ID!){
+    page(id: $id, idType: URI) {
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      ${SEO_FRAGMENT}
+    }
+    posts(first: 200, where: {status: PUBLISH}) {
+      nodes {
+        author {
+          node {
+            name
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+        dateGmt
+        title
+        content
+      }
+    }
+    ${MENU_FRAGMENT}
+  }`
+
 export const GET_SONGPAGE = `
   query getMisc($id: ID!){
     page(id: $id, idType: URI) {

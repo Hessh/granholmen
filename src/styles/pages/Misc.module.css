@@ -3,9 +3,64 @@
   padding-right: 1rem;
 }
 
+.post {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--cta-color);
+}
+
+.post:first-of-type {
+  padding: 0;
+  border-top: none;
+}
+
+.post:last-of-type {
+  padding-bottom: 0;
+}
+
+.postTop {}
+
+.postTop h4 {
+  margin: 0;
+}
+
+.postTop p {
+  margin-top: 0;
+  font-size: 15px;
+  color: #6b6b6b;
+}
+
+.postContent img {
+  width: 100%;
+}
+
+.postBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.postBottom h5 {
+  margin: 0;
+}
+
+.postBottom h5:first-of-type {
+  order: 2;
+}
+
 /* Styles for tablet */
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  .postBottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .postBottom h5:last-of-type {
+    order: 2;
+  }
+}
 
 /* Styles for laptop and up */
 

@@ -6,7 +6,9 @@ import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 
 import styles from 'styles/pages/Arsmoter.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import useWindowSize from 'src/utils/windowSize'
 
 const Arsmoter = ({ data }) => {
   const {
@@ -23,7 +25,10 @@ const Arsmoter = ({ data }) => {
   const lastYear = new Date().getFullYear() - 1
 
   const [selectedYear, setSelectedYear] = useState(lastYear)
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const size = useWindowSize()
+  const isMobile = size.width <= 768
 
   const handleSidebar = () => {
     setIsOpen(!isOpen)
@@ -32,25 +37,51 @@ const Arsmoter = ({ data }) => {
   const handleYear = event => {
     const clickedYear = event.target.innerHTML
     setSelectedYear(clickedYear)
+    isMobile && setIsOpen(false)
   }
-
-  // .sort((a, b) => (a.title < b.title ? 1 : -1))
 
   return (
     <Layout menus={{ headerMenu, footerMenu }} seo={seo}>
       <Hero title={title} subTitle={excerpt} image={sourceUrl} />
       <Container size='medium' className={styles.annualMeetingsContainer}>
         <div className={styles.annualMeetingsSidebar}>
-          <h5 className={styles.sidebarTitle} onClick={handleSidebar}>
-            Flere årsmøter
-          </h5>
-          {isOpen && (
+          <div className={styles.sidebarTitle} onClick={isMobile ? handleSidebar : null}>
+            <h5>Velg årstall</h5>
+            {isMobile && (
+              <img
+                src={isOpen ? '../media/icons/up.icon.svg' : '../media/icons/down.icon.svg'}
+                alt={isOpen ? 'Lukk' : 'Åpne'}
+              />
+            )}
+          </div>
+          {!isMobile && (
             <ul className={styles.sidebarList}>
-              {arsmoter.map(arsmote => (
-                <li className={styles.listItem} onClick={handleYear}>
-                  {arsmote.title}
-                </li>
-              ))}
+              {arsmoter
+                .sort((a, b) => (a.title < b.title ? 1 : -1))
+                .map(arsmote => {
+                  const isSelectedYear = arsmote.title == selectedYear
+                  return (
+                    <li className={`${isSelectedYear && styles.selected} ${styles.listItem}`} onClick={handleYear}>
+                      <h5>{arsmote.title}</h5>
+                      {isSelectedYear && <img src='../media/icons/right.icon.svg' alt='Valgt' />}
+                    </li>
+                  )
+                })}
+            </ul>
+          )}
+          {isMobile && isOpen && (
+            <ul className={styles.sidebarList}>
+              {arsmoter
+                .sort((a, b) => (a.title < b.title ? 1 : -1))
+                .map(arsmote => {
+                  const isSelectedYear = arsmote.title == selectedYear
+                  return (
+                    <li className={`${isSelectedYear && styles.selected} ${styles.listItem}`} onClick={handleYear}>
+                      <h5>{arsmote.title}</h5>
+                      {isSelectedYear && <img src='../media/icons/right.icon.svg' alt='Valgt' />}
+                    </li>
+                  )
+                })}
             </ul>
           )}
         </div>
@@ -59,9 +90,9 @@ const Arsmoter = ({ data }) => {
             if (title == selectedYear) {
               return (
                 <>
-                  <h4>{title}</h4>
+                  <h4>Dokumenter for {title}</h4>
                   {arsmote.accountingfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.accountingfile.sourceUrl} target='_blank'>
+                    <a className={styles.annualMeeting} href={arsmote.accountingfile.mediaItemUrl} target='_blank'>
                       <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Regnskap</h5>
                       <h5>{arsmote.accountingdate}</h5>
@@ -69,7 +100,7 @@ const Arsmoter = ({ data }) => {
                     </a>
                   )}
                   {arsmote.annualreportfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.annualreportfile.sourceUrl} target='_blank'>
+                    <a className={styles.annualMeeting} href={arsmote.annualreportfile.mediaItemUrl} target='_blank'>
                       <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Årsberetning</h5>
                       <h5>{arsmote.annualreportdate}</h5>
@@ -77,7 +108,7 @@ const Arsmoter = ({ data }) => {
                     </a>
                   )}
                   {arsmote.incomingcasesfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.incomingcasesfile.sourceUrl} target='_blank'>
+                    <a className={styles.annualMeeting} href={arsmote.incomingcasesfile.mediaItemUrl} target='_blank'>
                       <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Innkommende saker</h5>
                       <h5>{arsmote.incomingcasesdate}</h5>
@@ -85,7 +116,7 @@ const Arsmoter = ({ data }) => {
                     </a>
                   )}
                   {arsmote.noticefile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.noticefile.sourceUrl} target='_blank'>
+                    <a className={styles.annualMeeting} href={arsmote.noticefile.mediaItemUrl} target='_blank'>
                       <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Innkalling</h5>
                       <h5>{arsmote.noticedate}</h5>
@@ -93,7 +124,7 @@ const Arsmoter = ({ data }) => {
                     </a>
                   )}
                   {arsmote.reportfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.reportfile.sourceUrl} target='_blank'>
+                    <a className={styles.annualMeeting} href={arsmote.reportfile.mediaItemUrl} target='_blank'>
                       <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                       <h5>Referat</h5>
                       <h5>{arsmote.reportdate}</h5>

@@ -21,23 +21,23 @@ export const GET_SEWAGE = `
         gvaArsmote {
           accountingdate
           accountingfile {
-            sourceUrl
+            mediaItemUrl
           }
           annualreportdate
           annualreportfile {
-            sourceUrl
+            mediaItemUrl
           }
           incomingcasesdate
           incomingcasesfile {
-            sourceUrl
+            mediaItemUrl
           }
           noticedate
           noticefile {
-            sourceUrl
+            mediaItemUrl
           }
           reportdate
           reportfile {
-            sourceUrl
+            mediaItemUrl
           }
         }
       }

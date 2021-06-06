@@ -1,8 +1,49 @@
 .annualMeetingsContainer {
   padding: 2rem 0;
-  display: grid;
-  grid-template-columns: 20% 80%;
-  column-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.annualMeetingsSidebar {
+  padding: 0 1rem;
+}
+
+.sidebarTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0.25rem 0;
+  padding: 0.75rem;
+  border: 1px solid grey;
+  border-radius: var(--border-radius);
+}
+
+.sidebarTitle h5 {
+  margin: 0;
+}
+
+.sidebarTitle img {
+  width: 15px;
+}
+
+.sidebarList {
+  margin: 0;
+  padding: 0 1rem;
+  border: 1px solid grey;
+  border-radius: var(--border-radius);
+}
+
+.listItem {
+  margin: 0.75rem 0;
+  padding: 0;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.annualMeetings h4 {
+  margin: 1rem 0;
+  padding: 0 1rem;
 }
 
 .annualMeeting {
@@ -55,6 +96,12 @@
 /* Styles for tablet */
 
 @media screen and (min-width: 768px) {
+  .annualMeetingsContainer {
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    column-gap: 2rem;
+  }
   .annualMeetingContainer {
     padding: 2rem 0 1rem 0;
   }

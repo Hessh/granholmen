@@ -6,7 +6,7 @@ import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 import ContentContainer from 'components/ContentContainer/ContentContainer'
 
-import styles from 'styles/pages/Vann-og-avlop.module.css'
+import styles from 'styles/pages/Arsmoter.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -42,9 +42,10 @@ const Sewage = ({ data }) => {
       <Container size='fullWidth'>
         <ContentContainer size='medium' className={styles.annualMeetingsContainer}>
           <div className={styles.annualMeetingsSidebar}>
-            <h5 className={styles.sidebarTitle} onClick={handleSidebar}>
-              Flere årsmøter og annet
-            </h5>
+            <div className={styles.sidebarTitle} onClick={handleSidebar}>
+              <h5>Flere dokumenter</h5>
+              <img src='../media/icons/down.icon.svg' alt='Åpne' />
+            </div>
             {isOpen && (
               <ul className={styles.sidebarList}>
                 <li className={styles.listItem}>
@@ -57,11 +58,13 @@ const Sewage = ({ data }) => {
                     <a>Vedtekter</a>
                   </Link>
                 </li>
-                {arsmoter.map(arsmote => (
-                  <li className={styles.listItem} onClick={handleYear}>
-                    {arsmote.title}
-                  </li>
-                ))}
+                {arsmoter
+                  .sort((a, b) => (a.title < b.title ? 1 : -1))
+                  .map(arsmote => (
+                    <li className={styles.listItem} onClick={handleYear}>
+                      {arsmote.title}
+                    </li>
+                  ))}
               </ul>
             )}
           </div>
@@ -70,9 +73,9 @@ const Sewage = ({ data }) => {
               if (title == selectedYear) {
                 return (
                   <>
-                    <h4>{title}</h4>
+                    <h4>Dokumenter fra {title}</h4>
                     {arsmote.accountingfile != null && (
-                      <a className={styles.annualMeeting} href={arsmote.accountingfile.sourceUrl} target='_blank'>
+                      <a className={styles.annualMeeting} href={arsmote.accountingfile.mediaItemUrl} target='_blank'>
                         <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                         <h5>Regnskap</h5>
                         <h5>{arsmote.accountingdate}</h5>
@@ -80,7 +83,7 @@ const Sewage = ({ data }) => {
                       </a>
                     )}
                     {arsmote.annualreportfile != null && (
-                      <a className={styles.annualMeeting} href={arsmote.annualreportfile.sourceUrl} target='_blank'>
+                      <a className={styles.annualMeeting} href={arsmote.annualreportfile.mediaItemUrl} target='_blank'>
                         <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                         <h5>Årsberetning</h5>
                         <h5>{arsmote.annualreportdate}</h5>
@@ -88,7 +91,7 @@ const Sewage = ({ data }) => {
                       </a>
                     )}
                     {arsmote.incomingcasesfile != null && (
-                      <a className={styles.annualMeeting} href={arsmote.incomingcasesfile.sourceUrl} target='_blank'>
+                      <a className={styles.annualMeeting} href={arsmote.incomingcasesfile.mediaItemUrl} target='_blank'>
                         <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                         <h5>Innkommende saker</h5>
                         <h5>{arsmote.incomingcasesdate}</h5>
@@ -96,7 +99,7 @@ const Sewage = ({ data }) => {
                       </a>
                     )}
                     {arsmote.noticefile != null && (
-                      <a className={styles.annualMeeting} href={arsmote.noticefile.sourceUrl} target='_blank'>
+                      <a className={styles.annualMeeting} href={arsmote.noticefile.mediaItemUrl} target='_blank'>
                         <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                         <h5>Innkalling</h5>
                         <h5>{arsmote.noticedate}</h5>
@@ -104,7 +107,7 @@ const Sewage = ({ data }) => {
                       </a>
                     )}
                     {arsmote.reportfile != null && (
-                      <a className={styles.annualMeeting} href={arsmote.reportfile.sourceUrl} target='_blank'>
+                      <a className={styles.annualMeeting} href={arsmote.reportfile.mediaItemUrl} target='_blank'>
                         <img src='../media/icons/file.icon.svg' alt='PDF-file' />
                         <h5>Referat</h5>
                         <h5>{arsmote.reportdate}</h5>

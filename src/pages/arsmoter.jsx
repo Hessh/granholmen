@@ -46,7 +46,7 @@ const Arsmoter = ({ data }) => {
       <Container size='medium' className={styles.annualMeetingsContainer}>
         <div className={styles.annualMeetingsSidebar}>
           <div className={styles.sidebarTitle} onClick={isMobile ? handleSidebar : null}>
-            <h5>Flere dokumenter</h5>
+            <h5>Velg årstall</h5>
             {isMobile && (
               <img
                 src={isOpen ? '../media/icons/up.icon.svg' : '../media/icons/down.icon.svg'}
@@ -58,22 +58,30 @@ const Arsmoter = ({ data }) => {
             <ul className={styles.sidebarList}>
               {arsmoter
                 .sort((a, b) => (a.title < b.title ? 1 : -1))
-                .map(arsmote => (
-                  <li className={styles.listItem} onClick={handleYear}>
-                    {arsmote.title}
-                  </li>
-                ))}
+                .map(arsmote => {
+                  const isSelectedYear = arsmote.title == selectedYear
+                  return (
+                    <li className={`${isSelectedYear && styles.selected} ${styles.listItem}`} onClick={handleYear}>
+                      <h5>{arsmote.title}</h5>
+                      {isSelectedYear && <img src='../media/icons/right.icon.svg' alt='Valgt' />}
+                    </li>
+                  )
+                })}
             </ul>
           )}
           {isMobile && isOpen && (
             <ul className={styles.sidebarList}>
               {arsmoter
                 .sort((a, b) => (a.title < b.title ? 1 : -1))
-                .map(arsmote => (
-                  <li className={styles.listItem} onClick={handleYear}>
-                    {arsmote.title}
-                  </li>
-                ))}
+                .map(arsmote => {
+                  const isSelectedYear = arsmote.title == selectedYear
+                  return (
+                    <li className={`${isSelectedYear && styles.selected} ${styles.listItem}`} onClick={handleYear}>
+                      <h5>{arsmote.title}</h5>
+                      {isSelectedYear && <img src='../media/icons/right.icon.svg' alt='Valgt' />}
+                    </li>
+                  )
+                })}
             </ul>
           )}
         </div>

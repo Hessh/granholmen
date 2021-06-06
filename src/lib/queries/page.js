@@ -52,56 +52,6 @@ export const GET_BOARD_MEMBERS = `
     ${MENU_FRAGMENT}
   }`
 
-export const GET_REPORTS = `
-  query getReports{
-    page(id: "referat", idType: URI) {
-      slug
-      title
-      excerpt
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      ${SEO_FRAGMENT}
-    }
-    referater(first: 100) {
-      nodes {
-        title
-        referat {
-          date
-          file
-        }
-      }
-    }
-    ${MENU_FRAGMENT}
-  }`
-
-export const GET_ANNUAL_REPORTS = `
-  query getReports{
-    page(id: "arsberetning", idType: URI) {
-      slug
-      title
-      excerpt
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      ${SEO_FRAGMENT}
-    }
-    arsberetninger(first: 100) {
-      nodes {
-        title
-        arsberetning {
-          date
-          file
-        }
-      }
-    }
-    ${MENU_FRAGMENT}
-  }`
-
 export const GET_PROVISIONS = `
   query getProvisions{
     page(id: "vedtekter", idType: URI) {
@@ -119,9 +69,9 @@ export const GET_PROVISIONS = `
     ${MENU_FRAGMENT}
   }`
 
-export const GET_SEWAGE = `
-  query getSewage{
-    page(id: "vann-og-avlop", idType: URI) {
+export const GET_SONGPAGE = `
+  query getMisc($id: ID!){
+    page(id: $id, idType: URI) {
       slug
       title
       content

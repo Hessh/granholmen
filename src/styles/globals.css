@@ -128,6 +128,7 @@ ul, ol {
 
 ul li, ol li {
   margin: 0.75rem 0;
+  padding-right: 0.5rem;
   color: var(--text-color);
   font-family: 'Proxima Nova', sans-serif;
   font-size: 1.125rem;

@@ -28,12 +28,12 @@ const Footer = ({ footerMenu }) => {
               </li>
               <li className={styles.menuItem}>
                 <span>
-                  <img src='media/icons/phone.icon.svg' alt='Tel:' /> {subItemsContact[1].label}
+                  <img src='../media/icons/phone.icon.svg' alt='Tel:' /> {subItemsContact[1].label}
                 </span>
               </li>
               <li className={styles.menuItem}>
                 <span>
-                  <img src='media/icons/mail.icon.svg' alt='Mail:' /> {subItemsContact[2].label}
+                  <img src='../media/icons/mail.icon.svg' alt='Mail:' /> {subItemsContact[2].label}
                 </span>
               </li>
             </ul>

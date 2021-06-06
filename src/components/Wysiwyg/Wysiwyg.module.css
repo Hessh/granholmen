@@ -24,12 +24,21 @@
   line-height: 170%;
 }
 
+.content iframe {
+  width: 100%;
+  height: auto;
+}
+
 /* Styles for tablet */
 
 @media screen and (min-width: 768px) {
   .content {
     margin: 0 4rem 2rem 0;
     padding-right: 0;
+  }
+  .content iframe {
+    width: 500px;
+    height: 281px;
   }
 }
 

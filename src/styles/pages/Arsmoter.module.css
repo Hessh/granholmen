@@ -1,8 +1,11 @@
-.annualReportContainer {
+.annualMeetingsContainer {
   padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  column-gap: 2rem;
 }
 
-.annualReport {
+.annualMeeting {
   margin: 1rem 1rem;
   padding: 0 1rem;
   display: flex;
@@ -14,28 +17,28 @@
   transition: all linear 0.2s;
 }
 
-.annualReport:hover {
+.annualMeeting:hover {
   border: 1px solid var(--link-color-accent);
   transform: scale(1.02);
 }
 
-.annualReport img {
+.annualMeeting img {
   width: 25px;
 }
 
-.annualReport h5 {
+.annualMeeting h5 {
   margin: 1rem;
 }
 
-.report h5:first-of-type {
+.annualMeeting h5:first-of-type {
   font-size: 1.2rem;
 }
 
-.annualReport h5:last-of-type {
+.annualMeeting h5:last-of-type {
   display: none;
 }
 
-.annualReport button {
+.annualMeeting button {
   padding: 0.5rem 1rem;
   font-weight: bold;
   color: #FFF;
@@ -45,17 +48,17 @@
   transition: all linear 0.2s;
 }
 
-.annualReport:hover button {
+.annualMeeting:hover button {
   background-color: var(--link-color-accent);
 }
 
 /* Styles for tablet */
 
 @media screen and (min-width: 768px) {
-  .reportContainer {
+  .annualMeetingContainer {
     padding: 2rem 0 1rem 0;
   }
-  .annualReport h5:last-of-type {
+  .annualMeeting h5:last-of-type {
     display: block;
   }
 }

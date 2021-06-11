@@ -6,8 +6,7 @@ import Hero from 'components/Hero/Hero'
 import Container from 'components/Container/Container'
 
 import styles from 'styles/pages/Arsmoter.module.css'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { useState } from 'react'
 import useWindowSize from 'src/utils/windowSize'
 
 const Arsmoter = ({ data }) => {
@@ -22,9 +21,12 @@ const Arsmoter = ({ data }) => {
     node: { sourceUrl },
   } = featuredImage
 
-  const lastYear = new Date().getFullYear() - 1
+  const currentYear = new Date().getFullYear()
+  const lastYear = currentYear - 1
 
-  const [selectedYear, setSelectedYear] = useState(lastYear)
+  const isCurrentYear = arsmoter[0].title == currentYear
+
+  const [selectedYear, setSelectedYear] = useState(isCurrentYear ? currentYear : lastYear)
   const [isOpen, setIsOpen] = useState(false)
 
   const size = useWindowSize()

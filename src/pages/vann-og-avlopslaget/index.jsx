@@ -22,9 +22,12 @@ const Sewage = ({ data }) => {
     node: { sourceUrl },
   } = featuredImage
 
-  const lastYear = new Date().getFullYear() - 1
+  const currentYear = new Date().getFullYear()
+  const lastYear = currentYear - 1
 
-  const [selectedYear, setSelectedYear] = useState(lastYear)
+  const isCurrentYear = arsmoter[0].title == currentYear
+
+  const [selectedYear, setSelectedYear] = useState(isCurrentYear ? currentYear : lastYear)
   const [isOpen, setIsOpen] = useState(false)
 
   const size = useWindowSize()

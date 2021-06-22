@@ -18,25 +18,12 @@ export const GET_ANNUAL_MEETINGS = `
       nodes {
         title
         ghfArsmote {
-          accountingdate
-          accountingfile {
-            mediaItemUrl
-          }
-          annualreportdate
-          annualreportfile {
-            mediaItemUrl
-          }
-          incomingcasesdate
-          incomingcasesfile {
-            mediaItemUrl
-          }
-          noticedate
-          noticefile {
-            mediaItemUrl
-          }
-          reportdate
-          reportfile {
-            mediaItemUrl
+          documents {
+            title
+            date
+            file {
+              mediaItemUrl
+            }
           }
         }
       }

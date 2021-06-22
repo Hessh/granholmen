@@ -92,47 +92,19 @@ const Arsmoter = ({ data }) => {
             if (title == selectedYear) {
               return (
                 <>
-                  <h4>Dokumenter for {title}</h4>
-                  {arsmote.accountingfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.accountingfile.mediaItemUrl} target='_blank'>
+                <h4>Dokumenter for {title}</h4>
+                {arsmote.documents && arsmote.documents.map(({title, date, file: {mediaItemUrl: file}}, ixd) => {
+                  return (<>
+                  {file != null && (
+                    <a className={styles.annualMeeting} href={file} target='_blank' key={ixd}>
                       <img src='../media/icons/file.icon.svg' alt='PDF-file' />
-                      <h5>Regnskap</h5>
-                      <h5>{arsmote.accountingdate}</h5>
+                      <h5>{title}</h5>
+                      <h5>{date}</h5>
                       <button>Åpne</button>
                     </a>
                   )}
-                  {arsmote.annualreportfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.annualreportfile.mediaItemUrl} target='_blank'>
-                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
-                      <h5>Årsberetning</h5>
-                      <h5>{arsmote.annualreportdate}</h5>
-                      <button>Åpne</button>
-                    </a>
-                  )}
-                  {arsmote.incomingcasesfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.incomingcasesfile.mediaItemUrl} target='_blank'>
-                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
-                      <h5>Innkommende saker</h5>
-                      <h5>{arsmote.incomingcasesdate}</h5>
-                      <button>Åpne</button>
-                    </a>
-                  )}
-                  {arsmote.noticefile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.noticefile.mediaItemUrl} target='_blank'>
-                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
-                      <h5>Innkalling</h5>
-                      <h5>{arsmote.noticedate}</h5>
-                      <button>Åpne</button>
-                    </a>
-                  )}
-                  {arsmote.reportfile != null && (
-                    <a className={styles.annualMeeting} href={arsmote.reportfile.mediaItemUrl} target='_blank'>
-                      <img src='../media/icons/file.icon.svg' alt='PDF-file' />
-                      <h5>Referat</h5>
-                      <h5>{arsmote.reportdate}</h5>
-                      <button>Åpne</button>
-                    </a>
-                  )}
+                  </>)
+                  })}
                 </>
               )
             } else {

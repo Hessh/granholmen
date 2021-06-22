@@ -19,25 +19,12 @@ export const GET_SEWAGE = `
       nodes {
         title
         gvaArsmote {
-          accountingdate
-          accountingfile {
-            mediaItemUrl
-          }
-          annualreportdate
-          annualreportfile {
-            mediaItemUrl
-          }
-          incomingcasesdate
-          incomingcasesfile {
-            mediaItemUrl
-          }
-          noticedate
-          noticefile {
-            mediaItemUrl
-          }
-          reportdate
-          reportfile {
-            mediaItemUrl
+          documents {
+            title
+            date
+            file {
+              mediaItemUrl
+            }
           }
         }
       }

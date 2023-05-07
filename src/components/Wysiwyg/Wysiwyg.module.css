@@ -31,18 +31,20 @@
 
 /* Lists */
 
-.content ul, .content ol {
+.content ul,
+.content ol {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #f4f4f4;
   border-left: 3px solid var(--cta-color);
 }
 
-.content ul li, .content ol li {
+.content ul li,
+.content ol li {
   margin: 0.75rem 0;
   padding-right: 0.5rem;
   color: var(--text-color);
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 25px;
@@ -63,4 +65,5 @@
 
 /* Styles for laptop and up */
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+}

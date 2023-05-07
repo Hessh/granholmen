@@ -1,60 +1,36 @@
 /* Fonts */
 
 @font-face {
-  font-family: "Freight";
-  src: url("/fonts/freight/freight-text-book.ttf");
-}
-
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("/fonts/proximanova/proxima-nova-light.otf");
-  font-weight: 200;
-}
-
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("/fonts/proximanova/proxima-nova-regular.otf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("/fonts/proximanova/proxima-nova-semibold.otf");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Proxima Nova";
-  src: url("/fonts/proximanova/proxima-nova-bold.otf");
-  font-weight: 800;
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-Regular.ttf');
 }
 
 /* Root */
 
 :root {
-  --pri-color: #15203D;
-  --sec-color: #0C4B66;
+  --pri-color: #15203d;
+  --sec-color: #0c4b66;
   /* --cta-color: #0C4B66; */
-  --cta-color: #D59F75;
+  --cta-color: #d59f75;
   --title-color: #151515;
   --title-color-accent: #fff;
   --text-color: #121212;
   --text-color-accent: #fff;
   /* --link-color: #15203D; */
-  --link-color: #D59F75;
+  --link-color: #d59f75;
   /* --link-color-accent: #0C4B66; */
   --link-color-accent: #b17242;
   --border-radius: 2px;
   --shadow: 0 0 2px 0 rgb(54 72 99 / 20%);
-  ;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   position: relative;
   scroll-behavior: smooth;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -65,9 +41,13 @@ html, body {
 
 /* Text */
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: var(--title-color);
-  font-family: 'Freight', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.1px;
 }
 
@@ -89,14 +69,13 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
   font-size: clamp(1rem, 1.125rem, 1.4rem);
   line-height: 25px;
 }
 
 p {
   color: var(--text-color);
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 180%;
@@ -113,7 +92,8 @@ a:hover {
   color: var(--link-color-accent);
 }
 
-a:hover, button:hover {
+a:hover,
+button:hover {
   cursor: pointer;
 }
 
@@ -147,4 +127,5 @@ figure figcaption {
 
 /* Styles for laptop and up */
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+}

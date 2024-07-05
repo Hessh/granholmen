@@ -10,6 +10,7 @@ headerMenu: menu(id: "Header Menu", idType: NAME) {
   }
 }
 footerMenu: menu(id: "Footer Menu", idType: NAME) {
+  name
   menuItems(first: 100) {
     nodes {
       label
@@ -19,4 +20,15 @@ footerMenu: menu(id: "Footer Menu", idType: NAME) {
     }
   }
 }
-`
+footerMenuGva: menu(id: "Footer Menu GVA", idType: NAME) {
+  name
+  menuItems(first: 100) {
+    nodes {
+      label
+      path
+      id
+      parentId
+    }
+  }
+}
+`;

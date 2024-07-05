@@ -1,39 +1,54 @@
-import FooterItem from './FooterItem'
-import FooterItemExternal from './FooterItemExternal'
-import Container from 'components/Container/Container'
+import Container from "components/Container/Container";
+import FooterItem from "./FooterItem";
+import FooterItemExternal from "./FooterItemExternal";
 
-import styles from './Footer.module.css'
+import styles from "./Footer.module.css";
 
 const Footer = ({ footerMenu }) => {
-  const menuItems = footerMenu.menuItems.nodes
+  const menuItems = footerMenu.menuItems.nodes;
 
-  const subItemsContact = menuItems.filter(item => item.parentId === 'cG9zdDoxMg==')
-  const subItemsResources1 = menuItems.filter(item => item.parentId === 'cG9zdDoxMw==')
-  const subItemsResources2 = menuItems.filter(item => item.parentId === 'cG9zdDoxNA==')
+  const subItemsContact = menuItems.filter(
+    (item) =>
+      item.parentId === "cG9zdDoxMg==" || item.parentId === "cG9zdDo0NjQ="
+  );
+  const subItemsResources1 = menuItems.filter(
+    (item) =>
+      item.parentId === "cG9zdDoxMw==" || item.parentId === "cG9zdDo0Njg="
+  );
+  const subItemsResources2 = menuItems.filter(
+    (item) =>
+      item.parentId === "cG9zdDoxNA==" || item.parentId === "cG9zdDo0NzM="
+  );
 
-  const year = new Date().getFullYear()
-  const COPYRIGHT = '© ' + year + ' Hess Design'
+  console.log(footerMenu.name);
 
-  const FOTOCREDIT = 'Foto: Svein Hansen'
+  const isGva = footerMenu.name === "Footer Menu GVA";
+
+  const year = new Date().getFullYear();
+  const COPYRIGHT = "© " + year + " Hess Design";
+
+  const FOTOCREDIT = "Foto: Svein Hansen";
 
   return (
     <>
-      <Container size='fullWidth' className={styles.footerContainer}>
-        <Container size='large' className={styles.containerContent}>
+      <Container size="fullWidth" className={styles.footerContainer}>
+        <Container size="large" className={styles.containerContent}>
           <div className={styles.footerContent}>
-            <h5>KONTAKT OSS</h5>
+            <h5>KONTAKT {isGva ? "GVA" : "OSS"}</h5>
             <ul className={styles.subMenu}>
               <li className={styles.menuItem}>
-                <span>Styreleder: {subItemsContact[0].label}</span>
+                <span>Styreleder: {subItemsContact[0]?.label}</span>
               </li>
               <li className={styles.menuItem}>
                 <span>
-                  <img src='../media/icons/phone.icon.svg' alt='Tel:' /> {subItemsContact[1].label}
+                  <img src="../media/icons/phone.icon.svg" alt="Tel:" />{" "}
+                  {subItemsContact[1].label}
                 </span>
               </li>
               <li className={styles.menuItem}>
                 <span>
-                  <img src='../media/icons/mail.icon.svg' alt='Mail:' /> {subItemsContact[2].label}
+                  <img src="../media/icons/mail.icon.svg" alt="Mail:" />{" "}
+                  {subItemsContact[2].label}
                 </span>
               </li>
             </ul>
@@ -41,44 +56,52 @@ const Footer = ({ footerMenu }) => {
           <div className={styles.footerContent}>
             <h5>ANDRE RESSURSER</h5>
             <ul className={styles.subMenu}>
-              {subItemsResources1.map(menu => {
-                const { label, path } = menu
+              {subItemsResources1.map((menu) => {
+                const { label, path } = menu;
                 return (
                   <FooterItemExternal
                     className={styles.menuItem}
                     slug={path}
                     text={label}
                     key={label}
-                    target='_blank'
+                    target="_blank"
                   />
-                )
+                );
               })}
             </ul>
           </div>
           <div className={styles.footerContent}>
             <h5>ANDRE RESSURSER</h5>
             <ul className={styles.subMenu}>
-              {subItemsResources2.map(menu => {
-                const { label, path } = menu
+              {subItemsResources2.map((menu) => {
+                const { label, path } = menu;
                 return (
                   <FooterItemExternal
                     className={styles.menuItem}
                     slug={path}
                     text={label}
                     key={label}
-                    target='_blank'
+                    target="_blank"
                   />
-                )
+                );
               })}
             </ul>
           </div>
         </Container>
       </Container>
-      <Container size='fullWidth' className={styles.bottomContainer}>
-        <Container size='large' className={styles.bottomContent}>
+      <Container size="fullWidth" className={styles.bottomContainer}>
+        <Container size="large" className={styles.bottomContent}>
           <ul className={styles.bottomLeft}>
-            <FooterItem className={styles.menuItem} slug='/personvern' text='Personvern' />
-            <FooterItem className={styles.menuItem} slug='/informasjonskapsler' text='Informasjonskapsler' />
+            <FooterItem
+              className={styles.menuItem}
+              slug="/personvern"
+              text="Personvern"
+            />
+            <FooterItem
+              className={styles.menuItem}
+              slug="/informasjonskapsler"
+              text="Informasjonskapsler"
+            />
           </ul>
           <div className={styles.bottomRight}>
             <h5>{FOTOCREDIT}</h5>
@@ -87,7 +110,7 @@ const Footer = ({ footerMenu }) => {
         </Container>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
